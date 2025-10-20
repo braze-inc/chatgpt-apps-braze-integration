@@ -1,0 +1,25 @@
+{
+  "name": "mcp-server",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "esbuild src/inbox/index.tsx --bundle --format=esm --outfile=assets/inbox.js --jsx=automatic --jsx-import-source=react",
+    "serve": "serve -s ./assets -p 4444 --cors"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "esbuild": "^0.25.11",
+    "serve": "^14.2.5"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@braze/web-sdk": "^6.2.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  }
+}
