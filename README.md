@@ -2,6 +2,10 @@
 
 This README assumes you are using `pnpm`, but you can replace `pnpm` with the package manager of your choice (`yarn`, `npm`, etc).
 
+## Use your API Key and SDK Endpoint
+
+In `src/inbox/Inbox.tsx` and `server/index.ts`, replace any instances of `REPLACE_WITH_YOUR_API_KEY` with your API key and `REPLACE_WITH_YOUR_BASE_URL` with your SDK Endpoint, which can both be found on the App Settings page of the Braze dashboard.
+
 ## UI Setup
 
 Run the following commands from the root folder
@@ -40,6 +44,12 @@ To run:
 pnpm start
 ```
 
+To run with a custom port:
+
+```bash
+PORT=8008 pnpm start
+```
+
 Optionally, host the MCP server so that ChatGPT can access it:
 
 ```bash
@@ -74,6 +84,7 @@ Note that ChatGPT apps are not currently enabled for Business accounts. This mus
 1. Click on your account on the bottom left and go to Settings
 2. Go to the Apps & Connectors section
   - If you have not already done so, enable Developer Mode by scrolling to the bottom of this section and clicking on `Advanced settings`
+  - If you do not see a separate section for Apps on this panel, Apps may not be enabled for your account
 3. Click Create at the top right and enter the name, the `ngrok` URL provided by the command above, and use no authentication
 
 ### Use the app

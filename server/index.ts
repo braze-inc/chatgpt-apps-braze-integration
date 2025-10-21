@@ -1,5 +1,7 @@
 import express from "express";
 
+import { readFile } from "node:fs/promises";
+
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StreamableHTTPServerTransport } from "@modelcontextprotocol/sdk/server/streamableHttp.js";
 
@@ -37,7 +39,7 @@ server.registerResource(
         uri: "ui://widget/current-deals.html",
         mimeType: "text/html+skybridge",
         text: `<div id="inbox-root"></div>
-<script type="module">${await Bun.file("../assets/inbox.js").text()}</script>`.trim(),
+<script type="module">${await readFile(new URL("../assets/inbox.js", import.meta.url), "utf8")}</script>`.trim(),
         _meta: meta,
       },
     ],
