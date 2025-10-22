@@ -76,6 +76,10 @@ app.post('/mcp', async (req, res) => {
   await transport.handleRequest(req, res, req.body);
 });
 
+app.get("/health", (_, res) => {
+  res.status(200).json({ status: 'ok', timestamp: new Date().toISOString() })
+});
+
 const port = parseInt(process.env.PORT || '8000');
 app.listen(port, () => {
   console.log(`Demo MCP Server running on http://localhost:${port}/mcp`);

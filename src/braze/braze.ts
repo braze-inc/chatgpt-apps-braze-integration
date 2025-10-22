@@ -21,11 +21,7 @@ export const useBraze = ({ apiKey, baseUrl }: UseBrazeProps) => {
     braze.initialize(apiKey, { baseUrl, enableLogging: true });
 
     setIsInitialized(true);
-
-    return () => {
-      destroy();
-    }
   }, [isInitialized, apiKey, baseUrl]);
 
-  return { ...braze, isInitialized };
+  return { ...braze, isInitialized, destroy };
 }

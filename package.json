@@ -3,6 +3,9 @@
   "module": "index.ts",
   "type": "module",
   "private": true,
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "build": "esbuild src/inbox/index.tsx --bundle --format=esm --outfile=assets/inbox.js --jsx=automatic --jsx-import-source=react",
     "serve": "serve -s ./assets -p 4444 --cors"

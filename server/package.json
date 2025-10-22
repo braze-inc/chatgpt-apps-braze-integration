@@ -4,7 +4,8 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "start": "tsx index.ts"
+    "start": "tsx index.ts",
+    "build": "pnpm -C ../ install && pnpm -C ../ run build"
   },
   "devDependencies": {
     "@types/express": "^5.0.3",
